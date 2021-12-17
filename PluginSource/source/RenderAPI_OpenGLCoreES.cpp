@@ -27,7 +27,6 @@
 #	error Unknown platform
 #endif
 
-
 class RenderAPI_OpenGLCoreES : public RenderAPI
 {
 public:
@@ -189,10 +188,15 @@ RenderAPI_OpenGLCoreES::RenderAPI_OpenGLCoreES(UnityGfxRenderer apiType)
 }
 
 
+
 void RenderAPI_OpenGLCoreES::ProcessDeviceEvent(UnityGfxDeviceEventType type, IUnityInterfaces* interfaces)
 {
 	if (type == kUnityGfxDeviceEventInitialize)
 	{
+#ifdef UNITY_ANDROID
+		auto currentCtx = eglGetCurrentContext();
+		PLUGIN_LOG("UnityPluginLoad currentCtx = %p", currentCtx);
+#endif
 		CreateResources();
 	}
 	else if (type == kUnityGfxDeviceEventShutdown)

@@ -292,6 +292,11 @@ static void UNITY_INTERFACE_API OnRenderEvent(int eventID)
 	if (s_CurrentAPI == NULL)
 		return;
 
+#ifdef UNITY_ANDROID
+	auto currentCtx = eglGetCurrentContext();
+	PLUGIN_LOG("OnRenderEvent currentCtx = %p", currentCtx);
+#endif
+
 	DrawColoredTriangle();
 	ModifyTexturePixels();
 	ModifyVertexBuffer();

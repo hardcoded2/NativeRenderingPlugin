@@ -75,3 +75,10 @@
 	#define SAFE_RELEASE(a) if (a) { a->Release(); a = NULL; }
 #endif
 
+#ifdef UNITY_ANDROID
+#include <android/log.h>
+#include <EGL/egl.h>
+#define PLUGIN_LOG(... ) ((void)__android_log_print(ANDROID_LOG_INFO, "Unity", __VA_ARGS__))
+#else
+#define PLUGIN_LOG(... )
+#endif

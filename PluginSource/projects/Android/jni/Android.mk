@@ -12,7 +12,7 @@ LOCAL_SRC_FILES += $(SRC_DIR)/RenderingPlugin.cpp
 
 # OpenGL ES
 LOCAL_SRC_FILES += $(SRC_DIR)/RenderAPI_OpenGLCoreES.cpp
-LOCAL_LDLIBS += -lGLESv2
+LOCAL_LDLIBS += -lGLESv2 -lEGL
 LOCAL_CPPFLAGS += -DSUPPORT_OPENGL_ES=1
 
 # Vulkan (optional)
