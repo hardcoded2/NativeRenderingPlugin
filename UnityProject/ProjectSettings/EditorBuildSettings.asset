@@ -5,3 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes: []
+  m_configObjects:
+    com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: d62de6fd1f70f3344834c8dea6d33977,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4661581daea50cc4f9556bb0c60a4c3b,
+      type: 2}
