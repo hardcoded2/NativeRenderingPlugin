@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 22}
   - component: {fileID: 26}
   - component: {fileID: 24}
-  - component: {fileID: 31}
+  - component: {fileID: 27}
   m_Layer: 0
   m_Name: _PlaneThatCallsIntoPlugin
   m_TagString: Untagged
@@ -460,6 +460,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &27
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024458ed6a871174a98e17d349454f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &28
 Light:
   m_ObjectHideFlags: 0
@@ -584,18 +596,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &31
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ad34d2576df73428a8586fc566c6cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &32
 GameObject:
   m_ObjectHideFlags: 0
