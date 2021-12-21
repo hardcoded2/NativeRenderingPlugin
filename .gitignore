@@ -21,3 +21,6 @@ PluginSource/projects/Android/libs/*
 PluginSource/projects/Android/obj/*
 
 /UnityProject/Builds
+
+/UnityProject/UserSettings
+
