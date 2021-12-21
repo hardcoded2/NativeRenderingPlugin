@@ -129,7 +129,7 @@ extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API RegisterPlugin()
 // --------------------------------------------------------------------------
 // GraphicsDeviceEvent
 
-
+static bool hasCreatedResources = false;
 static RenderAPI* s_CurrentAPI = NULL;
 static UnityGfxRenderer s_DeviceType = kUnityGfxRendererNull;
 
@@ -295,6 +295,14 @@ static void UNITY_INTERFACE_API OnRenderEvent(int eventID)
 #ifdef UNITY_ANDROID
 	auto currentCtx = eglGetCurrentContext();
 	PLUGIN_LOG("OnRenderEvent currentCtx = %p", currentCtx);
+	if(currentCtx == NULL){
+	    //things didn't init
+	    return;
+	}
+	if(!hasCreatedResources){
+	    s_CurrentAPI->CreateResources();
+	    hasCreatedResources = true;
+	}
 #endif
 
 	DrawColoredTriangle();
