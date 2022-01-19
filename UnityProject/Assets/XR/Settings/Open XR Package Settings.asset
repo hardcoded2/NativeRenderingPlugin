@@ -100,6 +100,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-3747663117346387241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VIVEFocus3Feature Android
+  m_EditorClassIdentifier: Wave.OpenXR:Wave.OpenXR:VIVEFocus3Feature
+  m_enabled: 0
+  nameUi: VIVE Focus 3 Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.vivefocus3
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-3086242478566248830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +187,7 @@ MonoBehaviour:
   - {fileID: 2836639767988944314}
   - {fileID: 5853424948887419880}
   - {fileID: 7171925553630325547}
-  - {fileID: -523528402698571350}
+  - {fileID: 7818151905471779623}
   m_renderMode: 1
   m_depthSubmissionMode: 0
 --- !u!114 &-1318745532926615445
@@ -491,3 +511,23 @@ MonoBehaviour:
   required: 0
   cacheSize: 1048576
   perThreadCacheSize: 51200
+--- !u!114 &7818151905471779623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VIVEFocus3Feature Android
+  m_EditorClassIdentifier: Wave.OpenXR:Wave.OpenXR:VIVEFocus3Feature
+  m_enabled: 1
+  nameUi: VIVE Focus 3 Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.vivefocus3
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
