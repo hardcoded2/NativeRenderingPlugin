@@ -195,6 +195,7 @@ RenderAPI_OpenGLCoreES::RenderAPI_OpenGLCoreES(UnityGfxRenderer apiType)
 
 void RenderAPI_OpenGLCoreES::ProcessDeviceEvent(UnityGfxDeviceEventType type, IUnityInterfaces* interfaces)
 {
+	PLUGIN_LOG("UnityPluginLoad ProcessDeviceEvent entrypoint1");
     PLUGIN_LOG("UnityPluginLoad ProcessDeviceEvent entrypoint eventType %i", type);
 
 	if (type == kUnityGfxDeviceEventInitialize)
