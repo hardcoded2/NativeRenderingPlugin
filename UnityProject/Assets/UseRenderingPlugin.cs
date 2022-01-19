@@ -53,11 +53,15 @@ public class UseRenderingPlugin : MonoBehaviour
 
 	IEnumerator Start()
 	{
+		Debug.Log("UseRenderingPlugin Start");
 #if UNITY_WEBGL && !UNITY_EDITOR
 		RegisterPlugin();
 #endif
+		Debug.Log("UseRenderingPlugin Start post register");
 		CreateTextureAndPassToPlugin();
+		Debug.Log($"UseRenderingPlugin Start post {nameof(CreateTextureAndPassToPlugin)}");
 		SendMeshBuffersToPlugin();
+		Debug.Log($"UseRenderingPlugin Start post {nameof(SendMeshBuffersToPlugin)}");
 		yield return StartCoroutine("CallPluginAtEndOfFrames");
 	}
 
@@ -115,9 +119,10 @@ public class UseRenderingPlugin : MonoBehaviour
 	private IEnumerator CallPluginAtEndOfFrames()
 	{
 		while (true) {
+			Debug.Log($"CallPluginAtEndOfFrames {Time.frameCount}");
 			// Wait until all frame rendering is done
 			yield return new WaitForEndOfFrame();
-
+			
 			// Set time for the plugin
 			SetTimeFromUnity (Time.timeSinceLevelLoad);
 
@@ -126,6 +131,7 @@ public class UseRenderingPlugin : MonoBehaviour
 			// things it needs to do based on this ID.
 			// For our simple plugin, it does not matter which ID we pass here.
 			GL.IssuePluginEvent(GetRenderEventFunc(), 1);
+			Debug.Log($"CallPluginAtEndOfFrames {Time.frameCount} end");
 		}
 	}
 }
