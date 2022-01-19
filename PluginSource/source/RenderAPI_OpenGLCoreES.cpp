@@ -191,8 +191,10 @@ RenderAPI_OpenGLCoreES::RenderAPI_OpenGLCoreES(UnityGfxRenderer apiType)
 
 void RenderAPI_OpenGLCoreES::ProcessDeviceEvent(UnityGfxDeviceEventType type, IUnityInterfaces* interfaces)
 {
+PLUGIN_LOG("UnityPluginLoad toplevel");
 	if (type == kUnityGfxDeviceEventInitialize)
 	{
+	PLUGIN_LOG("UnityPluginLoad kUnityGfxDeviceEventInitialize");
 #ifdef UNITY_ANDROID
 		auto currentCtx = eglGetCurrentContext();
 		PLUGIN_LOG("UnityPluginLoad currentCtx = %p", currentCtx);
@@ -203,6 +205,7 @@ void RenderAPI_OpenGLCoreES::ProcessDeviceEvent(UnityGfxDeviceEventType type, IU
 	{
 		//@TODO: release resources
 	}
+	PLUGIN_LOG("UnityPluginLoad toplevel finished");
 }
 
 
