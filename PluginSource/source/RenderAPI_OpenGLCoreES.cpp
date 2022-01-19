@@ -44,8 +44,9 @@ public:
 
 	virtual void* BeginModifyVertexBuffer(void* bufferHandle, size_t* outBufferSize);
 	virtual void EndModifyVertexBuffer(void* bufferHandle);
-    virtual void CreateResources();
 
+private:
+	void CreateResources();
 
 private:
 	UnityGfxRenderer m_APIType;
@@ -129,7 +130,6 @@ static GLuint CreateShader(GLenum type, const char* sourceText)
 
 void RenderAPI_OpenGLCoreES::CreateResources()
 {
-    PLUGIN_LOG("UnityPluginLoad CreateResources before create shaders api type: %i",m_APIType);
 	// Create shaders
 	if (m_APIType == kUnityGfxRendererOpenGLES20)
 	{
@@ -153,7 +153,7 @@ void RenderAPI_OpenGLCoreES::CreateResources()
 	}
 #	endif // if SUPPORT_OPENGL_CORE
 
-PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram1 ");
+
 	// Link shaders into a program and find uniform locations
 	m_Program = glCreateProgram();
 	glBindAttribLocation(m_Program, kVertexInputPosition, "pos");
@@ -165,24 +165,20 @@ PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram1 ");
 		glBindFragDataLocation(m_Program, 0, "fragColor");
 #	endif // if SUPPORT_OPENGL_CORE
 	glLinkProgram(m_Program);
-PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram1.5");
+
 	GLint status = 0;
 	glGetProgramiv(m_Program, GL_LINK_STATUS, &status);
 	assert(status == GL_TRUE);
 
 	m_UniformWorldMatrix = glGetUniformLocation(m_Program, "worldMatrix");
 	m_UniformProjMatrix = glGetUniformLocation(m_Program, "projMatrix");
-PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram1.7");
 
 	// Create vertex buffer
 	glGenBuffers(1, &m_VertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
 	glBufferData(GL_ARRAY_BUFFER, 1024, NULL, GL_STREAM_DRAW);
-PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram after creation");
 
 	assert(glGetError() == GL_NO_ERROR);
-	PLUGIN_LOG("UnityPluginLoad CreateResources before create glprogram after creation and assert check");
-
 }
 
 
@@ -195,16 +191,13 @@ RenderAPI_OpenGLCoreES::RenderAPI_OpenGLCoreES(UnityGfxRenderer apiType)
 
 void RenderAPI_OpenGLCoreES::ProcessDeviceEvent(UnityGfxDeviceEventType type, IUnityInterfaces* interfaces)
 {
-	PLUGIN_LOG("UnityPluginLoad ProcessDeviceEvent entrypoint1");
-    PLUGIN_LOG("UnityPluginLoad ProcessDeviceEvent entrypoint eventType %i", type);
-
 	if (type == kUnityGfxDeviceEventInitialize)
 	{
 #ifdef UNITY_ANDROID
 		auto currentCtx = eglGetCurrentContext();
-		PLUGIN_LOG("UnityPluginLoad ProcessDeviceEvent currentCtx = %p", currentCtx);
+		PLUGIN_LOG("UnityPluginLoad currentCtx = %p", currentCtx);
 #endif
-		//CreateResources();
+		CreateResources();
 	}
 	else if (type == kUnityGfxDeviceEventShutdown)
 	{
