@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: MockDriver Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Driver
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.mockdriver
@@ -279,7 +280,6 @@ MonoBehaviour:
   - {fileID: 6137607789735955423}
   - {fileID: 2462649291403670998}
   - {fileID: -559150045590470937}
-  - {fileID: -8834651967317463607}
   - {fileID: -1318745532926615445}
   - {fileID: -8853781268922327099}
   - {fileID: 4449774767794835664}
@@ -301,13 +301,11 @@ MonoBehaviour:
   features:
   - {fileID: 4266193344109426969}
   - {fileID: -912167193916434381}
-  - {fileID: 1350091894317052547}
   - {fileID: 296238233419962385}
   - {fileID: 2754244649296296520}
   - {fileID: 2836639767988944314}
   - {fileID: 5853424948887419880}
   - {fileID: 7171925553630325547}
-  - {fileID: -2646570446385904343}
   m_renderMode: 1
   m_depthSubmissionMode: 0
 --- !u!114 &-1950723783842659127
@@ -427,6 +425,27 @@ MonoBehaviour:
   Values:
   - {fileID: -2533630105544552422}
   - {fileID: -2497149392728948123}
+--- !u!114 &160151497607776756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VIVEFocus3Feature Android
+  m_EditorClassIdentifier: Wave.OpenXR:Wave.OpenXR:VIVEFocus3Feature
+  m_enabled: 0
+  <failedInitialization>k__BackingField: 0
+  nameUi: VIVE Focus 3 Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.vivefocus3
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &296238233419962385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +499,7 @@ MonoBehaviour:
   m_Name: HTCViveFocus3Profile Android
   m_EditorClassIdentifier: 
   m_enabled: 1
+  <failedInitialization>k__BackingField: 0
   nameUi: HTC Vive Focus3 Profile
   version: 1.0.0
   featureIdInternal: com.htc.wave.openxr.feature.input.htcvivefocus3
@@ -487,6 +507,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &2462649291403670998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,11 +560,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef793c31862a37448e907829482ef80, type: 3}
   m_Name: OculusQuestFeature Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Quest Support
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.oculusquest
   openxrExtensionStrings: XR_OCULUS_android_initialize_loader
+  company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &3210621946941243460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VIVEFocus3Feature Android
+  m_EditorClassIdentifier: Wave.OpenXR:Wave.OpenXR:VIVEFocus3Feature
+  m_enabled: 0
+  nameUi: VIVE Focus 3 Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.vivefocus3
+  openxrExtensionStrings: 
   company: Unity
   priority: 0
   required: 0
@@ -621,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
