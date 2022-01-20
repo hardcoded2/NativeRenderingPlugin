@@ -307,9 +307,29 @@ MonoBehaviour:
   - {fileID: 2836639767988944314}
   - {fileID: 5853424948887419880}
   - {fileID: 7171925553630325547}
-  - {fileID: -2646570446385904343}
+  - {fileID: -2393269051064947906}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+--- !u!114 &-2393269051064947906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: VIVEFocus3Feature Android
+  m_EditorClassIdentifier: Wave.OpenXR:Wave.OpenXR:VIVEFocus3Feature
+  m_enabled: 1
+  nameUi: VIVE Focus 3 Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.vivefocus3
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-1950723783842659127
 MonoBehaviour:
   m_ObjectHideFlags: 0
