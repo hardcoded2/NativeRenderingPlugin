@@ -5,8 +5,6 @@
 
 RenderAPI* CreateRenderAPI(UnityGfxRenderer apiType)
 {
-PLUGIN_LOG("CreateRenderAPI");
-PLUGIN_LOG("CreateRenderAPI apiType %i",apiType);
 #	if SUPPORT_D3D11
 	if (apiType == kUnityGfxRendererD3D11)
 	{
@@ -25,14 +23,10 @@ PLUGIN_LOG("CreateRenderAPI apiType %i",apiType);
 
 
 #	if SUPPORT_OPENGL_UNIFIED
-PLUGIN_LOG("CreateRenderAPI SUPPORT_OPENGL_UNIFIED");
 	if (apiType == kUnityGfxRendererOpenGLCore || apiType == kUnityGfxRendererOpenGLES20 || apiType == kUnityGfxRendererOpenGLES30)
 	{
-	PLUGIN_LOG("CreateRenderAPI SUPPORT_OPENGL_UNIFIED match");
 		extern RenderAPI* CreateRenderAPI_OpenGLCoreES(UnityGfxRenderer apiType);
 		return CreateRenderAPI_OpenGLCoreES(apiType);
-	}else{
-	PLUGIN_LOG("CreateRenderAPI SUPPORT_OPENGL_UNIFIED no match");
 	}
 #	endif // if SUPPORT_OPENGL_UNIFIED
 
@@ -51,7 +45,7 @@ PLUGIN_LOG("CreateRenderAPI SUPPORT_OPENGL_UNIFIED");
 		return CreateRenderAPI_Vulkan();
 	}
 #	endif // if SUPPORT_VULKAN
-PLUGIN_LOG("CreateRenderAPI finished");
+
 	// Unknown or unsupported graphics API
 	return NULL;
 }
