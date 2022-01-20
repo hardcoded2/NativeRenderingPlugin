@@ -288,7 +288,6 @@ static void ModifyVertexBuffer()
 
 static void UNITY_INTERFACE_API OnRenderEvent(int eventID)
 {
-    PLUGIN_LOG("OnRenderEvent START");
 	// Unknown / unsupported graphics device type? Do nothing
 	if (s_CurrentAPI == NULL)
 		return;
@@ -301,7 +300,6 @@ static void UNITY_INTERFACE_API OnRenderEvent(int eventID)
 	DrawColoredTriangle();
 	ModifyTexturePixels();
 	ModifyVertexBuffer();
-	PLUGIN_LOG("OnRenderEvent finished");
 }
 
 
